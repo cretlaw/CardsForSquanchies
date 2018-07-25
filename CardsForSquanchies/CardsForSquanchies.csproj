@@ -203,6 +203,10 @@
     <Compile Include="Migrations\201807250342164_AddCardsTableToDB.Designer.cs">
       <DependentUpon>201807250342164_AddCardsTableToDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807250345449_PopulateCardsTable.cs" />
+    <Compile Include="Migrations\201807250345449_PopulateCardsTable.Designer.cs">
+      <DependentUpon>201807250345449_PopulateCardsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Card.cs" />
@@ -333,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807250342164_AddCardsTableToDB.resx">
       <DependentUpon>201807250342164_AddCardsTableToDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807250345449_PopulateCardsTable.resx">
+      <DependentUpon>201807250345449_PopulateCardsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
