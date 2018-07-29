@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Cards";
+}
+
+
+<div id="CardsApp">
+
+    <div class="card-deck">
+        <div v-for="card in cards">
+            <div class="card border-success text-white  bg-dark mb-5" style="max-width: 20rem;">
+                <img class="card-img-top" src="/images/SquanchyCardLogo.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Cards For Squanchies</h5>
+                    <p class="card-text text-center" style="min-height: 7rem">{{card.frontText}}</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Card No. {{card.id}}</small>
+                    <button type="button" class="btn btn-outline-warning btn-sm float-right">Flip this biaatch!</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+<script type="text/javascript" src="~/Scripts/vue.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="../../Vue/vue-cards.js"></script>

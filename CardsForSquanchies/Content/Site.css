@@ -1,4 +1,12 @@
-﻿body {
+﻿@font-face {
+    font-family: getSchwifty;
+    src: url('../fonts/getSchwiftyFont.ttf');
+}
+@font-face {
+    font-family: shitCan;
+    src: url('../fonts/creditsFont.ttf');
+}
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -22,3 +30,15 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.card-title {
+    font-family: getSchwifty, sans-serif;
+    font-size: 1.6rem;
+    color: greenyellow;
+    text-align: center;
+}
+
+.card-text {
+    font-size: 1.2rem;
+}
+
