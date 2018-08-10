@@ -1,26 +1,40 @@
-﻿new Vue({
+﻿let app = new Vue({
     el: "#CardsApp",
     data: {
         cards: [],
-        rowDisplay:true
+        isFetchingData: false,
+        /*isFlipped: false*/
+      
     },
     created: function () {
-
-        let vm = this;
+        this.isFetchingData = true
+        let vm = this
 
         axios.get("http://localhost:52007/api/cards")
             .then(response => {
-                this.cards = response.data.slice()
+                response.data.forEach((card) => {
+
+                    vm.cards.push({
+                        frontText: card.frontText,
+                        backText: card.backText,
+                        isFlipped: false,
+                        id:card.id
+                    })
+
+                })
+                
+                
+                vm.isFetchingData = false
+                
             })
+        
+
     },
+
     methods: {
-        toggleRow: function (index) {
-            if (index % 3 === 0) {
-                this.rowDisplay = true
-            } else {
-                this.rowDisplay = false
-            }
-            
+        flipCard: function (i) {
+            this.cards[i].isFlipped = !this.cards[i].isFlipped
         }
     }
+
 })
