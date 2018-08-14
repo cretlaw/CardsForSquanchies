@@ -2,8 +2,7 @@
     el: "#CardsApp",
     data: {
         cards: [],
-        isFetchingData: false,
-        /*isFlipped: false*/
+        isFetchingData: false
       
     },
     created: function () {
@@ -35,6 +34,7 @@
         flipCard: function (i) {
             this.cards[i].isFlipped = !this.cards[i].isFlipped
         }
+
     }
 
 })

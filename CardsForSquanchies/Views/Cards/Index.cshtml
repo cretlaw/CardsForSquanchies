@@ -18,41 +18,99 @@
     </div>
 
 
-    <section>
-        <div class="container">
-            <div class="row">
-                <div v-for="(card, index) in cards" class="col-sm-6 col-lg-4">
-                    <!-- Card Flip -->
-                    <div class="card-flip">
-                        <div v-bind:class="{flip:card.isFlipped}">
+    @*<section>
+            <div class="container">
+                <div class="row">
+                    <div v-for="(card, index) in cards" class="col-sm-6 col-lg-4">
+                        <!-- Card Flip -->
+                        <div class="card-flip">
+                            <div v-bind:class="{flip:card.isFlipped}">
 
-                            <div class="front">
-                                <!-- front content -->
-                                <div class="card border-success text-white  bg-dark mb-5" style="max-width: 20rem;">
+                                <div class="front">
+                                    <!-- front content -->
+                                    <div class="card border-success text-white  bg-dark mb-5" style="max-width: 20rem;">
+                                        <img class="card-img-top" src="/images/SquanchyCardLogo.jpg" alt="Card image cap" style="display: block;" data-holder-rendered="true">
+
+                                        <div class="card-body">
+                                            <h5 class="card-title text-center">Cards For Squanchies</h5>
+                                            <p class="card-text text-center" style="min-height: 7rem">{{card.frontText}}</p>
+
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <small class="text-muted">Card No. {{card.id}}</small>
+                                            <button @@click="flipCard(index)" type="button" class="btn btn-outline-warning btn-sm float-right">Flip this biaatch!</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="back">
+                                    <!-- back content -->
+                                    <div class="card border-success text-white  bg-dark mb-5" style="max-width: 20rem;">
+                                        <img class="card-img-top" src="/images/SquanchyCardLogo.jpg" alt="Card image cap" style="display: block;" data-holder-rendered="true">
+
+                                        <div class="card-body">
+                                            <h5 class="card-title text-center">Cards For Squanchies</h5>
+                                            <p class="card-text text-center" style="min-height: 7rem">{{card.backText}}</p>
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <small class="text-muted">Card No. {{card.id}}</small>
+                                            <button @@click="flipCard(index)" type="button" class="btn btn-outline-warning btn-sm float-right">Flip this biaatch back!</button>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        <!-- End Card Flip -->
+                    </div>
+                </div>
+            </div>
+        </section>*@
+
+    <section>
+        <div class="container card-container">
+            <div class="row">
+
+                <div v-for="(card, index) in cards" class="col-sm-6 col-lg-4 mb-5">
+                    <div class="flip">
+
+
+                        <div class="card border-success text-white bg-dark" v-bind:class="{flipped:card.isFlipped}" style="max-width: 20rem;">
+                            <div class="face front">
+
+                                <div>
                                     <img class="card-img-top" src="/images/SquanchyCardLogo.jpg" alt="Card image cap" style="display: block;" data-holder-rendered="true">
 
                                     <div class="card-body">
                                         <h5 class="card-title text-center">Cards For Squanchies</h5>
-                                        <p class="card-text text-center" style="min-height: 7rem">{{card.frontText}}</p>
-                                        
+                                        <p class="card-text text-center align-items-center d-flex justify-content-center" style="min-height: 8rem; margin-bottom: 0;">{{card.frontText}}<p>
+
                                     </div>
 
                                     <div class="card-footer">
-                                        <small class="text-muted">Card No. {{card.id}}</small>
-                                        <button @@click="flipCard(index)" type="button" class="btn btn-outline-warning btn-sm float-right">Flip this biaatch!</button>                                    
+                                        <small class="text-muted">Card No. {{card.id}} </small>
+                                        <button @@click="flipCard(index)" type="button" class="btn btn-outline-warning btn-sm float-right">Flip this biaatch!</button>
                                     </div>
                                 </div>
+
                             </div>
 
 
-                            <div class="back">
+                            <div class="face back">
                                 <!-- back content -->
-                                <div class="card border-success text-white  bg-dark mb-5" style="max-width: 20rem;">
+                                <div>
                                     <img class="card-img-top" src="/images/SquanchyCardLogo.jpg" alt="Card image cap" style="display: block;" data-holder-rendered="true">
 
                                     <div class="card-body">
                                         <h5 class="card-title text-center">Cards For Squanchies</h5>
-                                        <p class="card-text text-center" style="min-height: 7rem">{{card.backText}}</p>
+                                        <p class="card-text text-center align-items-center d-flex justify-content-center" style="min-height: 9rem; margin-bottom: 0; font-size: 1.6rem">{{card.backText}}</p>
                                     </div>
 
                                     <div class="card-footer">
@@ -61,20 +119,22 @@
                                     </div>
 
                                 </div>
-
                             </div>
 
 
-
                         </div>
+
+
+
                     </div>
-                    <!-- End Card Flip -->
                 </div>
             </div>
+
         </div>
+
+
+
     </section>
-
-
     <!-- CardsApp ends-->
 </div>
 
@@ -82,5 +142,19 @@
 <script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script type="text/javascript" src="../../Vue/vue-cards.js"></script>
 
+
+@*<script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#front').on('click', function() {
+                $('.card').addClass('flipped');
+            });
+
+            $('#back').on('click', function() {
+                $('.card').removeClass('flipped');
+            });
+        });
+
+    </script>*@
 
 
